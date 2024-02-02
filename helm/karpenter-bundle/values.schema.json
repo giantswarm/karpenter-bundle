@@ -5,7 +5,7 @@
         "apps": {
             "type": "object",
             "properties": {
-                "externalDns": {
+                "karpenter": {
                     "type": "object",
                     "properties": {
                         "appName": {
@@ -31,7 +31,7 @@
                         }
                     }
                 },
-                "externalDnsCrossplaneResources": {
+                "karpenterCrossplaneResources": {
                     "type": "object",
                     "properties": {
                         "appName": {
@@ -85,7 +85,7 @@
         "userConfig": {
             "type": "object",
             "properties": {
-                "externalDns": {
+                "karpenter": {
                     "type": "object",
                     "properties": {
                         "configMap": {
@@ -98,7 +98,7 @@
                         }
                     }
                 },
-                "externalDnsCrossplaneResources": {
+                "karpenterCrossplaneResources": {
                     "type": "object",
                     "properties": {
                         "configMap": {
