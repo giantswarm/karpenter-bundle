@@ -7,7 +7,7 @@ description: Karpenter Bundle with crossplane resources
 
 home: https://github.com/giantswarm/karpenter-bundle
 
-version: [[ .Version ]] 
+version: 0.0.1
 
 annotations:
   application.giantswarm.io/team: phoenix
