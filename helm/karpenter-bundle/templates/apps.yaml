@@ -22,7 +22,7 @@ spec:
     secret:
       name: {{ $.Values.clusterID }}-kubeconfig
       namespace: {{ $.Release.Namespace}}
-  name: karpenter-app
+  name: karpenter
   namespace: kube-system
   version: 0.9.1
 ---
