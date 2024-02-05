@@ -6,7 +6,7 @@ metadata:
   name: {{ $.Values.clusterID }}-karpenter
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: default
+  catalog: giantswarm
   config:
     configMap:
       name: {{ $.Values.clusterID }}-cluster-values
@@ -35,7 +35,7 @@ metadata:
   name: {{ $.Values.clusterID }}-karpenter-crossplane-resources
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: default
+  catalog: giantswarm
   install:
     timeout: "10m"
   upgrade:
