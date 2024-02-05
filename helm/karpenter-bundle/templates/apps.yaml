@@ -24,7 +24,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter-app
   namespace: kube-system
-  version: 0.9.0
+  version: 0.9.1
 ---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
