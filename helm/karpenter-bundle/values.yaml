@@ -4,28 +4,3 @@ serviceType: managed
 project:
   branch: "[[ .Branch ]]"
   commit: "[[ .SHA ]]"
-
-clusterID: ""
-organization: ""
-
-apps:
-  karpenter:
-    appName: karpenter-app
-    chartName: karpenter-app
-    catalog: giantswarm
-    enabled: true
-    namespace: kube-system
-    inCluster: false
-    # used by renovate
-    # repo: giantswarm/karpenter-app
-    version: 0.9.0
-  karpenterCrossplaneResources:
-    appName: karpenter-crossplane-resources
-    chartName: karpenter-crossplane-resources
-    catalog: giantswarm
-    enabled: true
-    namespace: kube-system
-    inCluster: true
-    # used by renovate
-    # repo: giantswarm/karpenter-crossplane-resources
-    version: 0.0.1
