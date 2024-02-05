@@ -8,14 +8,6 @@ project:
 clusterID: ""
 organization: ""
 
-userConfig:
-  karpenter:
-    configMap:
-      values:
-  karpenterCrossplaneResources:
-    configMap:
-      values:
-
 apps:
   karpenter:
     appName: karpenter-app

@@ -7,5 +7,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-
 [Unreleased]: https://github.com/giantswarm/karpenter-bundle/compare/v0.0.1...HEAD
