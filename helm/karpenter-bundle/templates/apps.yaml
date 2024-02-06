@@ -48,7 +48,7 @@ spec:
     inCluster: true
   name: karpenter-crossplane-resources
   namespace: {{ $.Release.Namespace }}
-  version: 0.0.2
+  version: 0.0.3
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
