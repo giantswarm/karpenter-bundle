@@ -24,7 +24,11 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter
   namespace: kube-system
-  version: 0.9.3
+  version: 0.10.0
+  extraConfigs:
+  - kind: configMap
+    name: {{ $.Values.clusterID }}-crossplane-config
+    namespace: {{ $.Release.Namespace }}
 ---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
