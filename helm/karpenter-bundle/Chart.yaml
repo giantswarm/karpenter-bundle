@@ -1,13 +1,8 @@
 apiVersion: v2
-
 name: karpenter-bundle
-
 description: Karpenter Bundle with crossplane resources
-
 home: https://github.com/giantswarm/karpenter-bundle
-
-version: 0.0.16
-
+version: 0.1.0
 annotations:
   application.giantswarm.io/team: phoenix
   application.giantswarm.io/in-cluster-app: "true"
