@@ -69,7 +69,12 @@ spec:
   upgrade:
     timeout: "10m"
   kubeConfig:
-    inCluster: true
+    context:
+      name: {{ $.Values.clusterID }}-admin@{{ $.Values.clusterID }}
+    inCluster: false
+    secret:
+      name: {{ $.Values.clusterID }}-kubeconfig
+      namespace: {{ $.Release.Namespace}}
   name: capa-karpenter-taint-remover
   namespace: {{ $.Release.Namespace }}
   version: 0.1.0
