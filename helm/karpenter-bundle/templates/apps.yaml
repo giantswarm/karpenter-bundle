@@ -38,7 +38,7 @@ metadata:
   name: {{ $.Values.clusterID }}-capa-karpenter-taint-remover
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: giantswarm-playground
+  catalog: giantswarm
   config:
     configMap:
       name: {{ $.Values.clusterID }}-cluster-values
@@ -56,7 +56,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: capa-karpenter-taint-remover
   namespace: kube-system
-  version: 0.2.0
+  version: 0.3.0
 ---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
