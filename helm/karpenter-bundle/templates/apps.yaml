@@ -53,3 +53,23 @@ spec:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
     namespace: {{ $.Release.Namespace }}
+---
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+    app-operator.giantswarm.io/version: 0.0.0
+    {{- include "labels.common" $ | nindent 4 }}
+  name: {{ $.Values.clusterID }}-capa-karpenter-taint-remover
+  namespace: {{ $.Release.Namespace }}
+spec:
+  catalog: giantswarm-playground
+  install:
+    timeout: "10m"
+  upgrade:
+    timeout: "10m"
+  kubeConfig:
+    inCluster: true
+  name: capa-karpenter-taint-remover
+  namespace: {{ $.Release.Namespace }}
+  version: 0.1.0
