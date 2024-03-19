@@ -34,6 +34,34 @@ apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
   labels:
+    {{- include "labels.common" $ | nindent 4 }}
+  name: {{ $.Values.clusterID }}-capa-karpenter-taint-remover
+  namespace: {{ $.Release.Namespace }}
+spec:
+  catalog: giantswarm-playground
+  config:
+    configMap:
+      name: {{ $.Values.clusterID }}-cluster-values
+      namespace: {{ $.Release.Namespace }}
+  install:
+    timeout: "10m"
+  upgrade:
+    timeout: "10m"
+  kubeConfig:
+    context:
+      name: {{ $.Values.clusterID }}-admin@{{ $.Values.clusterID }}
+    inCluster: false
+    secret:
+      name: {{ $.Values.clusterID }}-kubeconfig
+      namespace: {{ $.Release.Namespace}}
+  name: capa-karpenter-taint-remover
+  namespace: kube-system
+  version: 0.1.0
+---
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
     app-operator.giantswarm.io/version: 0.0.0
     {{- include "labels.common" $ | nindent 4 }}
   name: {{ $.Values.clusterID }}-karpenter-crossplane-resources
@@ -53,28 +81,3 @@ spec:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
     namespace: {{ $.Release.Namespace }}
----
-apiVersion: application.giantswarm.io/v1alpha1
-kind: App
-metadata:
-  labels:
-    app-operator.giantswarm.io/version: 0.0.0
-    {{- include "labels.common" $ | nindent 4 }}
-  name: {{ $.Values.clusterID }}-capa-karpenter-taint-remover
-  namespace: {{ $.Release.Namespace }}
-spec:
-  catalog: giantswarm-playground
-  install:
-    timeout: "10m"
-  upgrade:
-    timeout: "10m"
-  kubeConfig:
-    context:
-      name: {{ $.Values.clusterID }}-admin@{{ $.Values.clusterID }}
-    inCluster: false
-    secret:
-      name: {{ $.Values.clusterID }}-kubeconfig
-      namespace: {{ $.Release.Namespace}}
-  name: capa-karpenter-taint-remover
-  namespace: {{ $.Release.Namespace }}
-  version: 0.1.0
