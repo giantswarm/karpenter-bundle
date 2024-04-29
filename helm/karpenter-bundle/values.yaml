@@ -4,3 +4,5 @@ serviceType: managed
 project:
   branch: "[[ .Branch ]]"
   commit: "[[ .SHA ]]"
+
+karpenter: {}

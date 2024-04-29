@@ -1,0 +1,12 @@
+{{- if (($.Values.karpenter).values) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    {{- include "labels.common" $ | nindent 4 }}
+  name: {{ $.Values.clusterID }}-karpenter-config
+  namespace: {{ $.Release.Namespace }}
+data:
+  values: |
+  {{- (tpl ($.Values.karpenter.values | toYaml | toString) $) | nindent 4 }}
+{{- end }}
