@@ -14,8 +14,8 @@ data:
       nodePools:
         nodepool0:
           instanceType: m5.xlarge
-          maxSize: 0
-          minSize: 0
+          maxSize: 1
+          minSize: 1
           rootVolumeSizeGB: 300
       providerSpecific: {}
 kind: ConfigMap
