@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update interruption queue settings
+- Update SQS Policy URL
+
 ## [1.0.0] - 2024-04-29
 
 ## [0.1.1] - 2024-04-25
