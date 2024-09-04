@@ -87,5 +87,5 @@ spec:
     name: {{ $.Values.clusterID }}-crossplane-config
     namespace: {{ $.Release.Namespace }}
   - kind: configMap
-    name: {{ $.Values.clusterID }}-userconfig
-    namespace: {{ $.Release.Namespace }}
+    name: {{ $.Values.clusterID }}-chart-values
+    namespace: giantswarm
