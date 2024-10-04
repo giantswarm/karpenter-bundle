@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2024-10-04
+
 ### Changed
 
 - Update `karpenter-crossplane-resources` app version to add support for vintage OIDC issuer on migrated clusters
@@ -34,7 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First release
 
-[Unreleased]: https://github.com/giantswarm/karpenter-bundle/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/giantswarm/karpenter-bundle/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/giantswarm/karpenter-bundle/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/giantswarm/karpenter-bundle/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/giantswarm/karpenter-bundle/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/giantswarm/karpenter-bundle/compare/v0.1.1...v1.0.0
