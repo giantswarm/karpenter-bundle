@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update `karpenter-crossplane-resources` app version to add support for vintage OIDC issuer on migrated clusters
+
 ## [1.1.0] - 2024-10-04
+
 ### Changed
 
 - Update karpenter to update flowschema API
