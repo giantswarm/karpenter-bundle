@@ -61,7 +61,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: capa-karpenter-taint-remover
   namespace: kube-system
-  version: 0.3.0
+  version: 0.4.0
 ---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
