@@ -24,7 +24,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter
   namespace: kube-system
-  version: 0.13.0
+  version: 0.14.0
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
