@@ -40,6 +40,8 @@ kind: App
 metadata:
   labels:
     {{- include "labels.common" $ | nindent 4 }}
+  annotations:
+    app-operator.giantswarm.io/depends-on: {{ $.Values.clusterID }}-karpenter
   name: {{ $.Values.clusterID }}-karpenter-nodepools
   namespace: {{ $.Release.Namespace }}
 spec:
