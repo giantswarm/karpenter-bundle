@@ -63,7 +63,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter-nodepools
   namespace: kube-system
-  version: 0.0.0-04a496ebd2437fc4cc061bc6efabfb9871134c02
+  version: 0.0.0-7d80ae614132151298a1c4a4de4a56e888ac0c96
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-karpenter-nodepools-config
