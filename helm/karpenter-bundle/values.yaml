@@ -6,4 +6,4 @@ project:
   commit: "[[ .SHA ]]"
 
 karpenter: {}
-karpenter-nodepools: {}
+karpenterNodepools: {}
