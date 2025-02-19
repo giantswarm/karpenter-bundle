@@ -6,7 +6,7 @@ metadata:
   name: {{ $.Values.clusterID }}-karpenter
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: giantswarm
+  catalog: giantswarm-test
   config:
     configMap:
       name: {{ $.Values.clusterID }}-cluster-values
@@ -24,7 +24,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter
   namespace: kube-system
-  version: 0.12.1
+  version: 0.14.0-25d28cd63f1a4ab7420be9634de6e5e2c3af624b
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
@@ -40,10 +40,42 @@ kind: App
 metadata:
   labels:
     {{- include "labels.common" $ | nindent 4 }}
+  name: {{ $.Values.clusterID }}-karpenter-nodepools
+  namespace: {{ $.Release.Namespace }}
+spec:
+  catalog: giantswarm-test
+  config:
+    configMap:
+      name: {{ $.Values.clusterID }}-cluster-values
+      namespace: {{ $.Release.Namespace }}
+  install:
+    timeout: "10m"
+  upgrade: 
+    timeout: "10m"
+  kubeConfig:
+    context:
+      name: {{ $.Values.clusterID }}-admin@{{ $.Values.clusterID }}
+    inCluster: false
+    secret:
+      name: {{ $.Values.clusterID }}-kubeconfig
+      namespace: {{ $.Release.Namespace}}
+  name: karpenter-nodepools
+  namespace: kube-system
+  version: 0.0.0-f9fca0347f7a6976255931bd9d2122945f973a06
+  extraConfigs:
+  - kind: configMap
+    name: {{ $.Values.clusterID }}-karpenter-nodepools-config
+    namespace: {{ $.Release.Namespace }}
+---
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+    {{- include "labels.common" $ | nindent 4 }}
   name: {{ $.Values.clusterID }}-capa-karpenter-taint-remover
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: giantswarm
+  catalog: giantswarm-test
   config:
     configMap:
       name: {{ $.Values.clusterID }}-cluster-values
@@ -61,7 +93,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: capa-karpenter-taint-remover
   namespace: kube-system
-  version: 0.3.0
+  version: 0.4.0-49140da831687d50be5b61ba69ca4a14a80b8629
 ---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
