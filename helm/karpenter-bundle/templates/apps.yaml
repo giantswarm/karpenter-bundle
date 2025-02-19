@@ -24,7 +24,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter
   namespace: kube-system
-  version: 0.14.0-25d28cd63f1a4ab7420be9634de6e5e2c3af624b
+  version: 0.14.0-f7bf2055ade21a70009ff9cde304751b20753f26
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
