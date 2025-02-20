@@ -5,6 +5,9 @@
         "karpenter": {
             "type": "object"
         },
+        "karpenterNodepools": {
+            "type": "object"
+        },
         "name": {
             "type": "string"
         },
