@@ -40,40 +40,6 @@ kind: App
 metadata:
   labels:
     {{- include "labels.common" $ | nindent 4 }}
-  annotations:
-    app-operator.giantswarm.io/depends-on: {{ $.Values.clusterID }}-karpenter
-  name: {{ $.Values.clusterID }}-karpenter-nodepools
-  namespace: {{ $.Release.Namespace }}
-spec:
-  catalog: giantswarm-test
-  config:
-    configMap:
-      name: {{ $.Values.clusterID }}-cluster-values
-      namespace: {{ $.Release.Namespace }}
-  install:
-    timeout: "10m"
-  upgrade: 
-    timeout: "10m"
-  kubeConfig:
-    context:
-      name: {{ $.Values.clusterID }}-admin@{{ $.Values.clusterID }}
-    inCluster: false
-    secret:
-      name: {{ $.Values.clusterID }}-kubeconfig
-      namespace: {{ $.Release.Namespace}}
-  name: karpenter-nodepools
-  namespace: kube-system
-  version: 0.0.0-7ad48a5c6a875f04c6762600af55f18458d58615
-  extraConfigs:
-  - kind: configMap
-    name: {{ $.Values.clusterID }}-karpenter-nodepools-config
-    namespace: {{ $.Release.Namespace }}
----
-apiVersion: application.giantswarm.io/v1alpha1
-kind: App
-metadata:
-  labels:
-    {{- include "labels.common" $ | nindent 4 }}
   name: {{ $.Values.clusterID }}-capa-karpenter-taint-remover
   namespace: {{ $.Release.Namespace }}
 spec:
