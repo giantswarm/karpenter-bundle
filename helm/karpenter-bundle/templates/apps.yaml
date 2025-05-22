@@ -6,7 +6,7 @@ metadata:
   name: {{ $.Values.clusterID }}-karpenter
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: giantswarm
+  catalog: giantswarm-test
   config:
     configMap:
       name: {{ $.Values.clusterID }}-cluster-values
@@ -24,7 +24,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter
   namespace: kube-system
-  version: 0.14.0
+  version: 0.14.0-f7bf2055ade21a70009ff9cde304751b20753f26
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
@@ -43,7 +43,7 @@ metadata:
   name: {{ $.Values.clusterID }}-capa-karpenter-taint-remover
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: giantswarm
+  catalog: giantswarm-test
   config:
     configMap:
       name: {{ $.Values.clusterID }}-cluster-values
@@ -61,7 +61,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: capa-karpenter-taint-remover
   namespace: kube-system
-  version: 0.4.0
+  version: 0.5.0
 ---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
