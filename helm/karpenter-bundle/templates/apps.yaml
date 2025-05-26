@@ -43,7 +43,7 @@ metadata:
   name: {{ $.Values.clusterID }}-capa-karpenter-taint-remover
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: giantswarm-test
+  catalog: giantswarm
   config:
     configMap:
       name: {{ $.Values.clusterID }}-cluster-values
