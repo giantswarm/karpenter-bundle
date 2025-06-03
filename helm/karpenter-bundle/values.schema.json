@@ -3,7 +3,44 @@
     "type": "object",
     "properties": {
         "karpenter": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+                "values": {
+                    "type": "object",
+                    "title": "Karpenter values",
+                    "description": "Values to be passed to the Karpenter Helm chart.",
+                    "properties": {
+                        "serviceAccount": {
+                            "type": "object",
+                            "properties": {
+                                "annotations": {
+                                    "type": "object",
+                                    "description": "Additional annotations for the ServiceAccount."
+                                }
+                            }
+                        },
+                        "settings": {
+                            "type": "object",
+                            "properties": {
+                                "clusterEndpoint": {
+                                    "type": "string",
+                                    "title": "Cluster k8s API endpoint",
+                                    "description": "Typically, something like https://api.<cluster-name>.<baseDomain>."
+                                },
+                                "clusterName": {
+                                    "type": "string",
+                                    "title": "Cluster name"
+                                },
+                                "interruptionQueue": {
+                                    "type": "string",
+                                    "title": "Interruption Queue",
+                                    "description": "Interruption queue is the name of the SQS queue used for processing interruption events from EC2."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "karpenterNodepools": {
             "type": "object"
