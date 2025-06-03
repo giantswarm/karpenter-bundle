@@ -3,6 +3,8 @@ kind: App
 metadata:
   labels:
     {{- include "labels.common" $ | nindent 4 }}
+  annotations:
+    app-operator.giantswarm.io/depends-on: {{ include "resource.default.name" $ }}-karpenter-crossplane-resources
   name: {{ $.Values.clusterID }}-karpenter
   namespace: {{ $.Release.Namespace }}
 spec:
