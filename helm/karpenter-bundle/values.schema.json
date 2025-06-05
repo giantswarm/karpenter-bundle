@@ -42,9 +42,6 @@
                 }
             }
         },
-        "karpenterNodepools": {
-            "type": "object"
-        },
         "name": {
             "type": "string"
         },
