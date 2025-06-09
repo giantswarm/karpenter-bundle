@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Add karpenter-app dependency on karpenter-crossplane-resources app.
+- Bump karpenter to `v1.5.0`.
+
 ## [1.4.0] - 2024-11-28
 
 ### Changed

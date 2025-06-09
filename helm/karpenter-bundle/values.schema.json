@@ -3,7 +3,142 @@
     "type": "object",
     "properties": {
         "karpenter": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+                "values": {
+                    "type": "object",
+                    "title": "Karpenter values",
+                    "description": "Values to be passed to the Karpenter Helm chart.",
+                    "properties": {
+                        "additionalLabels": {
+                            "properties": {},
+                            "type": "object"
+                        },
+                        "controller": {
+                            "properties": {
+                                "containerName": {
+                                    "type": "string"
+                                },
+                                "env": {
+                                    "type": "array"
+                                },
+                                "envFrom": {
+                                    "type": "array"
+                                },
+                                "extraVolumeMounts": {
+                                    "type": "array"
+                                },
+                                "healthProbe": {
+                                    "properties": {
+                                        "port": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "image": {
+                                    "properties": {
+                                        "digest": {
+                                            "type": "string"
+                                        },
+                                        "repository": {
+                                            "type": "string"
+                                        },
+                                        "tag": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "metrics": {
+                                    "properties": {
+                                        "port": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "resources": {
+                                    "properties": {},
+                                    "type": "object"
+                                },
+                                "securityContext": {
+                                    "properties": {
+                                        "appArmorProfile": {
+                                            "properties": {},
+                                            "type": "object"
+                                        },
+                                        "seLinuxOptions": {
+                                            "properties": {},
+                                            "type": "object"
+                                        },
+                                        "seccompProfile": {
+                                            "properties": {},
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "sidecarContainer": {
+                                    "type": "array"
+                                },
+                                "sidecarVolumeMounts": {
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "extraVolumes": {
+                            "type": "array"
+                        },
+                        "nodeSelector": {
+                            "type": "object"
+                        },
+                        "serviceAccount": {
+                            "type": "object",
+                            "properties": {
+                                "annotations": {
+                                    "type": "object",
+                                    "description": "Additional annotations for the ServiceAccount."
+                                }
+                            }
+                        },
+                        "settings": {
+                            "type": "object",
+                            "properties": {
+                                "clusterEndpoint": {
+                                    "type": "string",
+                                    "title": "Cluster k8s API endpoint",
+                                    "description": "Typically, something like https://api.<cluster-name>.<baseDomain>."
+                                },
+                                "clusterName": {
+                                    "type": "string",
+                                    "title": "Cluster name"
+                                },
+                                "interruptionQueue": {
+                                    "type": "string",
+                                    "title": "Interruption Queue",
+                                    "description": "Interruption queue is the name of the SQS queue used for processing interruption events from EC2."
+                                }
+                            }
+                        },
+                        "tolerations": {
+                            "items": {
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "operator": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    }
+                }
+            }
         },
         "name": {
             "type": "string"

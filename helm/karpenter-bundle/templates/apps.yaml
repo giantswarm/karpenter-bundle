@@ -3,6 +3,8 @@ kind: App
 metadata:
   labels:
     {{- include "labels.common" $ | nindent 4 }}
+  annotations:
+    app-operator.giantswarm.io/depends-on: {{ $.Values.clusterID }}-karpenter-crossplane-resources
   name: {{ $.Values.clusterID }}-karpenter
   namespace: {{ $.Release.Namespace }}
 spec:
@@ -24,7 +26,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter
   namespace: kube-system
-  version: 0.14.0
+  version: 1.0.0
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
@@ -61,7 +63,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: capa-karpenter-taint-remover
   namespace: kube-system
-  version: 0.4.0
+  version: 0.6.0
 ---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
