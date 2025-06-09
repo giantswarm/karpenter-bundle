@@ -10,6 +10,90 @@
                     "title": "Karpenter values",
                     "description": "Values to be passed to the Karpenter Helm chart.",
                     "properties": {
+                        "additionalLabels": {
+                            "properties": {},
+                            "type": "object"
+                        },
+                        "controller": {
+                            "properties": {
+                                "containerName": {
+                                    "type": "string"
+                                },
+                                "env": {
+                                    "type": "array"
+                                },
+                                "envFrom": {
+                                    "type": "array"
+                                },
+                                "extraVolumeMounts": {
+                                    "type": "array"
+                                },
+                                "healthProbe": {
+                                    "properties": {
+                                        "port": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "image": {
+                                    "properties": {
+                                        "digest": {
+                                            "type": "string"
+                                        },
+                                        "repository": {
+                                            "type": "string"
+                                        },
+                                        "tag": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "metrics": {
+                                    "properties": {
+                                        "port": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "resources": {
+                                    "properties": {},
+                                    "type": "object"
+                                },
+                                "securityContext": {
+                                    "properties": {
+                                        "appArmorProfile": {
+                                            "properties": {},
+                                            "type": "object"
+                                        },
+                                        "seLinuxOptions": {
+                                            "properties": {},
+                                            "type": "object"
+                                        },
+                                        "seccompProfile": {
+                                            "properties": {},
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "sidecarContainer": {
+                                    "type": "array"
+                                },
+                                "sidecarVolumeMounts": {
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "extraVolumes": {
+                            "type": "array"
+                        },
+                        "nodeSelector": {
+                            "type": "object"
+                        },
                         "serviceAccount": {
                             "type": "object",
                             "properties": {
@@ -37,6 +121,20 @@
                                     "description": "Interruption queue is the name of the SQS queue used for processing interruption events from EC2."
                                 }
                             }
+                        },
+                        "tolerations": {
+                            "items": {
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "operator": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
                         }
                     }
                 }
