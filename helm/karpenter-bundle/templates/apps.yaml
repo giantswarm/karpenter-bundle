@@ -8,7 +8,7 @@ metadata:
   name: {{ $.Values.clusterID }}-karpenter
   namespace: {{ $.Release.Namespace }}
 spec:
-  catalog: giantswarm-test
+  catalog: giantswarm
   config:
     configMap:
       name: {{ $.Values.clusterID }}-cluster-values
@@ -26,7 +26,7 @@ spec:
       namespace: {{ $.Release.Namespace}}
   name: karpenter
   namespace: kube-system
-  version: 0.14.0-397364e1f72c97e31cf7e6c88398c74f17d5fd36
+  version: 1.0.0
   extraConfigs:
   - kind: configMap
     name: {{ $.Values.clusterID }}-crossplane-config
