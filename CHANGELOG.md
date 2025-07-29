@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- Remove capa-karpenter-taint-remover because nodes are now in the `MachinePool` CR, so the taint will be removed by CAPI.
+
 ## [2.0.0] - 2025-06-09
 
 ### Changed
