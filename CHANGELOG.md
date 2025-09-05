@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Change karpenter to it's own namespace.
+- Bump karpenter to `v1.6.3`.
+- Allow changing karpenter app versions.
+
 ## [2.1.0] - 2025-07-29
 
 ### Removed
